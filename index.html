@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webhook Image Display</title>
+</head>
+<body>
+    <h1>Received Image</h1>
+    <img id="image" src="" alt="Image">
+    <script>
+        // Function to update the image URL
+        function updateImage(url) {
+            document.getElementById('image').src = url;
+        }
+        
+        // Check if there's a URL in the query string
+        const params = new URLSearchParams(window.location.search);
+        const imageUrl = params.get('url');
+        if (imageUrl) {
+            updateImage(imageUrl);
+        }
+    </script>
+</body>
+</html>
